@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decreCount,
@@ -7,7 +8,6 @@ import {
 import classNames from "classnames";
 import Count from "../Count";
 import "./index.scss";
-import { useState } from "react";
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.foods);
@@ -28,6 +28,7 @@ const Cart = () => {
         className={classNames("cartOverlay", visible && "visible")}
         onClick={() => setVisible(false)}
       />
+
       <div className="cart">
         {/* fill 添加fill类名可以切换购物车状态*/}
         {/* 购物车数量 */}
@@ -56,6 +57,7 @@ const Cart = () => {
           <div className="minFee">¥20起送</div>
         )}
       </div>
+
       {/* 添加visible类名 div会显示出来 */}
       <div className={classNames("cartPanel", visible && "visible")}>
         <div className="header">
