@@ -34,7 +34,7 @@ const foodsStore = createSlice({
       const item = state.cartList.find((item) => item.id === action.payload.id);
       const itemIndex = state.cartList.findIndex((item) => item.id === action.payload.id);
       if (item.count === 1) {
-        //数量为小于1，不再显示
+        //数量不得小于1，否则不再显示
         state.cartList.splice(itemIndex, 1)
       }
       item.count--;
